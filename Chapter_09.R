@@ -1,5 +1,8 @@
 #Example 9.2 ####
 HairEyeColor <- readRDS("data/HairEyeColor.rds")
+# or
+HairEyeColor <- read.csv("data/HairEyeColor.csv")
+
 head(HairEyeColor, 3)
 # contingency table
 table(HairEyeColor)
@@ -24,6 +27,8 @@ abs(GSTest$stdres) > qnorm(p = 1 - 0.05/2)
 
 #Example 9.4 ####
 Employees <- readRDS("data/Employees.rds")
+Employees <- read.csv("data/Employees.csv")
+
 head(Employees,3)
 table(Employees)
 (EmployeeTest = chisq.test(table(Employees),
@@ -34,6 +39,7 @@ print(EmployeeTest$stdres) # print() is optional
 
 #Example 9.6 ####
 SpamData <- readRDS("data/SpamData.rds")
+SpamData <- read.csv("data/SpamData.csv")
 head(SpamData,3)
 table(SpamData)
 # use chi-square test to check assumptions:
@@ -45,6 +51,7 @@ fisher.test(x = table(SpamData),
 
 #Example 9.7 ####
 BleedingData <- readRDS("data/BleedingData.rds")
+BleedingData <- read.csv("data/BleedingData.csv")
 head(BleedingData,3)
 #  McNemar’s Test with mcnemar.test() is alwasy two-tailed
 mcnemar.test(x = table(BleedingData), 
