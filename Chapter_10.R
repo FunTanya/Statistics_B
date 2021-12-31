@@ -1,5 +1,6 @@
 # data for Chapter 10 ####
 AppleTrees <- readRDS("data/AppleTrees.rds")
+AppleTrees <- read.csv("data/AppleTrees.csv")
 head(x = AppleTrees,3)
 
 # Simple Linear Model ####
