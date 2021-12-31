@@ -1,15 +1,15 @@
 # Probability Plots
-WaitingTimes <- c(readRDS("data/Times.rds"),7)
-data <- sort(WaitingTimes)
-n <- length(data)
+WaitingTimes <- read.csv("data/WaitingTimes.csv")$time
+sorted.data <- sort(WaitingTimes)
+n <- length(sorted.data)
 #theoretical probabilities
 pi <-  (1:n - 3/8)/(n+1-2*3/8)
 #ECDF
-pnorm(data, mean(data), sd(data))
+pnorm(sorted.data, mean(sorted.data), sd(sorted.data))
 #theoretical z-scores
 qnorm(pi)
 #sample
-data
+sorted.data
 
 
 # Example 8.2 ####
@@ -65,7 +65,7 @@ nortest::pearson.test(x = Volumes,
 
 # Example 8.7 ####
 1-.Call(stats:::C_pKolmogorov2x, STAT = 0.2421539, n = 10)
-WaitingTimes <- c(readRDS("data/Times.rds"),7)
+WaitingTimes <- read.csv("data/WaitingTimes.csv")$time
 sorted.data <- sort(WaitingTimes)
 ecdf = 1:10/10
 ecdfminus = 0:9/10
@@ -89,5 +89,6 @@ DescTools::Kurt(Volumes,method = 1)
 DescTools::JarqueBeraTest(x = Volumes, robust = FALSE, method = "chisq")
 shapiro.test(x = Volumes)
 #library(onewaytests)
+SoftDrink <-  read.csv("data/SoftDrink.csv")
 onewaytests::nor.test(formula = Sales ~ Color, data = SoftDrink, plot= NULL,
                       method = "SW") # Shapiro-Wilk by default
