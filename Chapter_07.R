@@ -18,7 +18,7 @@ homog.test(formula = time ~ program, data = MaleRunners,
 # ANOVA F-test (fail to reject H0)
 aov.test(formula = time ~ program, data = MaleRunners, alpha = 0.05) 
 
-# Male Runners
+# Female Runners
 #read data from *.rds
 FemaleRunners <- readRDS("data/FemaleRunners.rds")
 # OR read data from *.csv
