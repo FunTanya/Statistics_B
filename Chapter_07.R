@@ -33,7 +33,7 @@ nor.test(formula = time ~ program, data = FemaleRunners, alpha = 0.05)
 # homogeneity assumption (Example 7.3)
 homog.test(formula = time ~ program, data = FemaleRunners, 
            method = "Bartlett", alpha = 0.05)
-# ANOVA F-test (fail to reject H0)
+# ANOVA F-test (reject H0)
 aov.test(formula = time ~ program, data = FemaleRunners, alpha = 0.05)
 
 
