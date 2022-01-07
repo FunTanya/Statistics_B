@@ -1,6 +1,6 @@
 ######################################################
 # Example 1.3                         ################
-# Male Runners #######################################
+# Employees of a Small Company #######################
 EX_DATA_DF <- readRDS("data/EX_DATA_DF.rds")
 # frequency distribution for Degree
 table(EX_DATA_DF$Degree)
