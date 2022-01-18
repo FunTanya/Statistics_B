@@ -72,9 +72,9 @@ addmargins(table(EX_DATA_DF$Gender,EX_DATA_DF$Degree))
     ##   Male           3          9        4        3  19
     ##   Sum            5         17        6        4  32
 
-# Employees of a Small Business Company: Using Tidyverse and pander packages
+# Employees of a Small Business Company: Using `idyverse` and `pander` packages
 
--   frequency distribution for Degree with
+-   frequency distribution for Degree with `tidyverse`
 
 ``` r
 library(tidyverse)
@@ -86,7 +86,7 @@ EX_DATA_DF %>% select(Degree) %>%
     ##  Associate Bachelor's   Master's   Doctoral 
     ##          5         17          6          4
 
--   frequency distribution for Degree: (simple) tables with pander
+-   frequency distribution for Degree: (simple) tables with `pander`
 
 ``` r
 library(pander)
