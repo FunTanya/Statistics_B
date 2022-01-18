@@ -120,7 +120,17 @@ rstatix::games_howell_test(formula = Sales ~ Color, data = SoftDrink) %>% pander
 
 ``` r
 ConsumersRating <- read.csv("../data/ConsumersRating.csv",stringsAsFactors = TRUE)
+ConsumersRating %>% 
+  group_by(product) %>% 
+  summarize(n=n(),Mean = mean(rating),Std = sd(rating)) %>% 
+  pander()
 ```
+
+| product |  n  | Mean |  Std  |
+|:-------:|:---:|:----:|:-----:|
+|    A    |  5  | 7.6  | 2.074 |
+|    B    |  5  | 5.6  | 2.51  |
+|    C    |  5  |  4   | 2.121 |
 
 -   Kruskal-Wallis Test
 
