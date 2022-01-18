@@ -38,14 +38,14 @@ cbind(fi,percent,cum.fi,cum.percent)
 addmargins(table(EX_DATA_DF$Gender,EX_DATA_DF$Degree))
 ```
 
-# Employees of a Small Business Company: Using Tidyverse and pander packages
-- frequency distribution for Degree with \texttt{tidyverse}
+# Employees of a Small Business Company: Using `tidyverse` and `pander` packages
+- frequency distribution for Degree with `tidyverse`
 ```{r warning=FALSE, message=FALSE}
 library(tidyverse)
 EX_DATA_DF %>% select(Degree) %>%
     table()
 ```  
-- frequency distribution for Degree: (simple) tables with pander
+- frequency distribution for Degree: (simple) tables with `pander`
 ```{r warning=FALSE, message=FALSE, results='asis'}
 library(pander)
 EX_DATA_DF %>% select(Degree) %>%
