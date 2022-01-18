@@ -56,7 +56,7 @@ nor.test(formula = time ~ program, data = MaleRunners, alpha = 0.05)
     ## 3     3 0.9853467 0.9610184  Not reject
     ## --------------------------------------------------
 
-![](Chapter_7_ANOVA_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](Chapter_7_ANOVA_files/figure-gfm/Normality%20M-1.png)<!-- -->
 
 -   and homogeneity assumption:
 
@@ -149,7 +149,7 @@ nor.test(formula = time ~ program, data = FemaleRunners, alpha = 0.05)
     ## 3     3 0.9097182 0.46589886  Not reject
     ## --------------------------------------------------
 
-![](Chapter_7_ANOVA_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](Chapter_7_ANOVA_files/figure-gfm/Normality%20F-1.png)<!-- -->
 
 -   *Example 7.3*: homogeneity assumption (Bartlett’s)
 

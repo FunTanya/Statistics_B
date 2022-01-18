@@ -41,7 +41,7 @@ nor.test(formula = Sales ~ Color, data = SoftDrink, alpha = 0.05)
     ## 4 yellow 0.9474516 0.7196053  Not reject
     ## --------------------------------------------------
 
-![](Chapter_7_Welch_KW_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](Chapter_7_Welch_KW_files/figure-gfm/Normality%20for%20Soft%20Drink-1.png)<!-- -->
 
 -   homogeneity assumption
 
