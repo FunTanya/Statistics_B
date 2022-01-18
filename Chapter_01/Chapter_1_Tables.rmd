@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 # Employees of a Small Business Company: Using Simple Commnads
 - reading data:
 ```{r}
-EX_DATA_DF <- readRDS("data/EX_DATA_DF.rds")
+EX_DATA_DF <- readRDS("../data/EX_DATA_DF.rds")
 ```
 - frequency distribution for Degree
 ```{r }
