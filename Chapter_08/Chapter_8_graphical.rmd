@@ -1,0 +1,63 @@
+---
+title: 'Chapter 8: Goodness-of-fit Tests'
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Graphical Techniques
+
+### Normal Plots
+```{r waiting times data, warning=FALSE, message=FALSE}
+library(pander) #nice tables
+library(tidyverse) # %>%  and ggplot2
+WaitingTimes <- read.csv("../data/WaitingTimes.csv")$time
+sorted.data <- sort(WaitingTimes)
+n <- length(sorted.data)
+```
+- theoretical CDF $p_i$
+```{r}
+pi <-  (1:n - 3/8)/(n+1-2*3/8)
+```
+
+- empirical CDF $F(x_{(i)})$
+```{r}
+Fxi <- pnorm(sorted.data, mean(sorted.data), sd(sorted.data))
+```
+- theoretical quantiles $z_{1-p_i}$ (z-scores)
+```{r}
+z.scores <- qnorm(pi)
+```
+- sample quantiles $x_{(i)}$ (sorted data)
+
+```{r}
+sorted.data
+```
+- summary
+```{r}
+data.frame(pi, Fxi, z.scores, data = sorted.data ) %>% pander()
+```
+
+- Normal PP Plot
+```{r pp plot, message=FALSE}
+library(qqplotr)
+df=data.frame(x=sorted.data)
+mean <- mean(df$x)
+sd <- sd(df$x)
+
+df %>% ggplot(aes(sample=x)) +
+    stat_pp_line(linetype = "dashed")+
+    stat_pp_point(distribution = "norm", dparams = list(mean,sd)) +
+    labs(y ="Empirical CDF", x = "Theoretical CDF")
+```
+
+- Normal QQ Plot
+```{r qq plot}
+df %>% ggplot(aes(sample=x)) +
+    geom_qq_line(linetype = "dashed")+
+    geom_qq() +
+    labs(y = "Sample Quantiles", x = "Theoretical Quantiles")
+```
+
