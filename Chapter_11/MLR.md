@@ -80,7 +80,7 @@ ggplot(new_df_Age,  aes(x = Age, y = WeightLoss))+
   labs(x="Age (years)",y="Weight Loss (kg)")
 ```
 
-![](MLR_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](MLR_files/figure-gfm/SLM%20age-1.png)<!-- -->
 
 ### SLM: total weight loss as a linear function of BMI
 
@@ -114,7 +114,7 @@ ggplot(new_df_BMI,  aes(x = BMI, y = WeightLoss))+
   labs(x="Baseline BMI",y="Weight Loss (kg)")
 ```
 
-![](MLR_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](MLR_files/figure-gfm/SLM%20BMI-1.png)<!-- -->
 
 -   Correlation Coefficients for Weight Loss Data
 
@@ -316,7 +316,7 @@ ggplot(DFMLMplot, aes(fitted,WeightLoss)) +
   labs(y ="Observed Weight Loss",x="Fitted Weight Loss (kg)")
 ```
 
-![](MLR_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+![](MLR_files/figure-gfm/MLM%20Age%20BMI-1.png)<!-- -->
 
 -   Raw residuals against fitted
 
@@ -328,7 +328,7 @@ ggplot(DFMLMplot, aes(fitted, residuals)) +
   labs(x="Fitted Weight Loss (kg)", y="Raw Residuals")
 ```
 
-![](MLR_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+![](MLR_files/figure-gfm/fitted_res-1.png)<!-- -->
 
 -   Residuals against Age
 
@@ -340,7 +340,7 @@ ggplot(DFMLMplot, aes(Age, residuals_AGe)) +
   labs(x="Age (years)", y="Raw Residuals")
 ```
 
-![](MLR_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+![](MLR_files/figure-gfm/age_res-1.png)<!-- -->
 
 -   Residuals against Baseline BMI
 
@@ -352,7 +352,7 @@ ggplot(DFMLMplot, aes(BMI, residuals_BMI)) +
   labs(x="Baseline BMI", y="Raw Residuals")
 ```
 
-![](MLR_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
+![](MLR_files/figure-gfm/BMI_res-1.png)<!-- -->
 
 -   Scale-Location Plot
 
@@ -366,7 +366,7 @@ ggplot(DFMLMplot, aes(fitted, scaleres)) +
        y=expression(paste(sqrt(abs(e[i])))))
 ```
 
-![](MLR_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
+![](MLR_files/figure-gfm/scale_location-1.png)<!-- -->
 
 -   Normal QQ Plot
 
@@ -378,7 +378,7 @@ ggplot(DFMLMplot, aes(sample = stdres_ext)) +
   labs(y="Externally Studentized",x="Theoretical Quantiles")
 ```
 
-![](MLR_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
+![](MLR_files/figure-gfm/normalQQ-1.png)<!-- -->
 
 -   Testing normality with Shapiro test
 

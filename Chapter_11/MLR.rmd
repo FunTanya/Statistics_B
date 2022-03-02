@@ -36,7 +36,7 @@ summary(SLM_Age)$coefficients
 summary(SLM_Age)$r.squared
 ```
 - plot:
-```{r warning=FALSE, message=FALSE}
+```{r SLM age, warning=FALSE, message=FALSE}
 temp_var_Age <- predict(SLM_Age, interval = "prediction")  #lwr and upper
 new_df_Age <- cbind(DFMLM, temp_var_Age)
 
@@ -57,7 +57,7 @@ summary(SLM_BMI)$coefficients
 summary(SLM_BMI)$r.squared
 ```
 - plot:
-```{r warning=FALSE, message=FALSE}
+```{r SLM BMI, warning=FALSE, message=FALSE}
 temp_var_BMI <- predict(SLM_BMI, interval = "prediction") #lwr and upper
 new_df_BMI<- cbind(DFMLM, temp_var_BMI)
 
@@ -147,7 +147,7 @@ predict(object = MLM_Age_BMI, newdata = newAge_BMI,
 ## Checking Model Assumptions
 ### Residual Plots
 - Response against Fitted
-```{r warning=FALSE, message=FALSE}
+```{r MLM Age BMI, warning=FALSE, message=FALSE}
 DFMLMplot <- DFMLM
 DFMLMplot$fitted <- fitted(MLM_Age_BMI)
 
@@ -157,7 +157,7 @@ ggplot(DFMLMplot, aes(fitted,WeightLoss)) +
 ```
 
 - Raw residuals against fitted
-```{r warning=FALSE, message=FALSE}
+```{r fitted_res, warning=FALSE, message=FALSE}
 DFMLMplot$residuals <- residuals(MLM_Age_BMI)
 ggplot(DFMLMplot, aes(fitted, residuals)) +
   geom_hline(yintercept = 0) +
@@ -166,7 +166,7 @@ ggplot(DFMLMplot, aes(fitted, residuals)) +
 ```
 
 - Residuals against Age
-```{r warning=FALSE, message=FALSE}
+```{r age_res, warning=FALSE, message=FALSE}
 DFMLMplot$residuals_AGe <- residuals(SLM_Age)
 ggplot(DFMLMplot, aes(Age, residuals_AGe)) +
   geom_hline(yintercept = 0) +
@@ -175,7 +175,7 @@ ggplot(DFMLMplot, aes(Age, residuals_AGe)) +
 ```
 
 - Residuals against Baseline BMI
-```{r warning=FALSE, message=FALSE}
+```{r BMI_res, warning=FALSE, message=FALSE}
 DFMLMplot$residuals_BMI <- residuals(SLM_BMI)
 ggplot(DFMLMplot, aes(BMI, residuals_BMI)) +
   geom_hline(yintercept = 0) +
@@ -184,7 +184,7 @@ ggplot(DFMLMplot, aes(BMI, residuals_BMI)) +
 ```
 
 - Scale-Location Plot
-```{r warning=FALSE, message=FALSE}
+```{r scale_location, warning=FALSE, message=FALSE}
 DFMLMplot$scaleres <- sqrt(abs(rstandard(MLM_Age_BMI)))
 ggplot(DFMLMplot, aes(fitted, scaleres)) +
   geom_point() +
@@ -195,7 +195,7 @@ ggplot(DFMLMplot, aes(fitted, scaleres)) +
 ```
 
 - Normal QQ Plot
-```{r warning=FALSE, message=FALSE}
+```{r normalQQ, warning=FALSE, message=FALSE}
 DFMLMplot$stdres_ext <- rstudent(MLM_Age_BMI)
 ggplot(DFMLMplot, aes(sample = stdres_ext)) +
   geom_qq_line()+ 

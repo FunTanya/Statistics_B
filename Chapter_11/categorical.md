@@ -60,7 +60,7 @@ ggplot(data=DFMLM,
   labs(y="Weight Loss (kg)", x= expression(paste("Baseline BMI (",X[1],")")))
 ```
 
-![](categorical_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](categorical_files/figure-gfm/MLM%20categorical-1.png)<!-- -->
 
 ### MLM: total weight loss as a linear function of Age, BMI and Exercise Time
 
@@ -205,4 +205,4 @@ ggplot(dfmachine, aes(x=dimension, y=oldmachine)) +
   geom_segment(aes(x=14.5,xend=14.5,y=0,yend=0.412))
 ```
 
-![](categorical_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](categorical_files/figure-gfm/MLM%20logistic-1.png)<!-- -->

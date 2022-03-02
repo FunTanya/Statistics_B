@@ -26,7 +26,7 @@ summary(MLM_BMI_Time)
 ```
 
 
-```{r}
+```{r MLM categorical}
 predictions = predict(MLM_BMI_Time)
 ggplot(data=DFMLM, 
        mapping=aes(x=BMI, y=WeightLoss,color=ExerciseTime)) + 
@@ -76,7 +76,7 @@ summary(
 ```
 
 - plot
-```{r warning=FALSE, message=FALSE}
+```{r MLM logistic, warning=FALSE, message=FALSE}
 ggplot(dfmachine, aes(x=dimension, y=oldmachine)) + 
   geom_point() +
   stat_smooth(method="glm", se=FALSE, method.args = list(family=binomial)) +
